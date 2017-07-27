@@ -2,6 +2,8 @@
 - hosts: all
   remote_user: root
   roles:
+    - FGtatsuro.python-requirements
+    - FGtatsuro.java
     - role: android
       android_extra_components:
         - android-22

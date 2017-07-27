@@ -16,7 +16,7 @@ galaxy_info:
     - development
     - osx
 
-# dependencies: []
-dependencies:
-  - FGtatsuro.python-requirements
-  - FGtatsuro.java
+  dependencies: []
+#dependencies:
+#  - FGtatsuro.python-requirements
+#  - FGtatsuro.java

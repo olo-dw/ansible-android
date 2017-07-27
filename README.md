@@ -31,10 +31,18 @@ The variables we can use in this role.
 |android_extra_components_pip_executable|Specified path of pip to install python libraries which are needed to install `android_extra_components` automatically. <br> If it is null, pip which Ansible finds automatically is used.|str|null|
 |android_emulator_kvm_user|If this value is defined, setup for Android emulator with KVM is executed. <br>- `/dev/kvm` is created by `mknod` command. <br>- The user of this variable is appended to group `kvm`. And the members of this group can read/write `/dev/kvm`.|str|It isn't defined in default.|
 
-Role Dependencies
------------------
+Prerequisites
+-------------
 
-The dependencies on other roles for this role.
+- python
+- pip
+- openssl
+- java
+
+Recommended Roles
+------------------
+
+The dependencies on other roles for this role could be:
 
 - FGtatsuro.python-requirements
 - FGtatsuro.java
@@ -44,7 +52,9 @@ Example Playbook
 
     - hosts: all
       roles:
-         - { role: FGtatsuro.android }
+      - FGtatsuro.python-requirements
+      - FGtatsuro.java
+      - FGtatsuro.android
 
 Test on local Docker host
 -------------------------
